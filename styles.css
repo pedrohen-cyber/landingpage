@@ -173,17 +173,20 @@ header{
     flex-direction: column;
 }
 
-.princ{
+/* Em vez de width: 109vh; */
+.princ {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 55vh;
-    width: 109vh;
+    min-height: 55vh;
+    width: 90%;          /* Usa porcentagem para largura */
+    max-width: 900px;    /* Impede que fique gigante em telas grandes */
     background-color: var(--primary-color);
-    margin-top: 18vh;
+    margin-top: 100px;
     border-radius: 35px;
     border: 1px solid #26480E;
+    padding: 20px;
 }
 
 .peeds-frase-princ{
@@ -198,8 +201,8 @@ header{
     margin-right: 26vh;
     line-height: 15vh;
     position: absolute;
-    transform: translate(20px);
     transform: translate(11px, -8px);
+    z-index: 1;
 }
 
 .peeds-frase-princ2{
@@ -208,6 +211,7 @@ header{
     margin-right: 26vh;
     line-height: 15vh;
     margin-left: 5vh;
+    position: absolute;
 }
 
 .fraseDeEfeito{
@@ -321,26 +325,25 @@ header{
     color: white;
 }
 
-.ul-clientes{
+.ul-clientes {
     display: flex;
-    flex-direction: row;
-    gap: 15vh;
+    flex-wrap: wrap; /* Permite que os cards desçam se a tela for pequena */
+    justify-content: center;
+    gap: 30px;
     padding: 0;
-    margin: 5vh;
+    margin: 5vh 0;
 }
 
-.li-content{
+.li-content {
     background-color: var(--background-color-primary);
-    flex-direction: column;
     border-radius: 25px;
-    height: 60vh;
-    width: 42vh;
-    padding: 3vh;
-    justify-content: center;
-    display: grid;
-    grid-template-rows: 2fr 3fr 50px;
-    line-height: 1.7;
-    font-size: 1.1em;
+    min-height: 350px;
+    width: 100%;
+    max-width: 320px; /* Largura padrão para cada card */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .imagem-nome{
@@ -439,15 +442,17 @@ header{
     justify-content: flex-start;
 }
 
-.container-captura{
-    height: 72vh;
-    width: 100vh;
+.container-captura {
+    min-height: 70vh;
+    width: 90%;
+    max-width: 650px;
     background-color: rgba(68, 68, 68, 0.77);
     border-radius: 35px;
-    padding: 4vh;
-    margin-left: 6vh;
-    display: grid;
-    grid-template-rows: 1fr 32vh 13vh;
+    padding: 40px;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .container-captura h1{
@@ -468,17 +473,16 @@ header{
     margin-bottom: 2vh;
 }
 
-.container-captura input{
-    height: 6vh;
-    padding: 2vh;
-    width: auto;
+.container-captura input {
+    height: 50px;
+    padding: 0 20px;
+    width: 100%; /* Adapta ao container */
     border-radius: 100px;
     outline: none;
     border: none;
     font-family: "Manrope", sans-serif;
     font-weight: 700;
     font-size: 1.1em;
-    width: 80vh;
 }
 
 .container-captura a{
